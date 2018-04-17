@@ -94,6 +94,7 @@ public class MainController {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setUserType(UserType.USER);
         user.setVerify(false);
+
         String token = jwtTokenUtil.generateToken(new CurrentUser(user));
         user.setToken(token);
         userRepository.save(user);

@@ -169,7 +169,7 @@ public class UserController {
         return ResponseEntity.ok(posts);
     }
 
-    @RequestMapping(value = "/user/changePassword", method = RequestMethod.POST)
+    @PostMapping("/changePassword")
     public ResponseEntity changePassword(@RequestParam(name = "old") String oldPassword, @RequestParam(name = "new") String newPassword,
                                  @AuthenticationPrincipal UserDetails userDetails) {
         User user;
@@ -189,7 +189,7 @@ public class UserController {
         return ResponseEntity.ok("password succesfuly chnged");
     }
 
-    @RequestMapping(value = "/user/updateUser", method = RequestMethod.POST)
+    @PostMapping("/updateUser")
     public ResponseEntity updateUser(@RequestParam(name = "name") String name, @RequestParam(name = "surname") String surname,
                               @AuthenticationPrincipal UserDetails userDetails) throws Exception {
         User user;
